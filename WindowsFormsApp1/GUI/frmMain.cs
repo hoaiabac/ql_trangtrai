@@ -49,7 +49,7 @@ namespace WindowsFormsApp1
         private void btnSalary_Click(object sender, EventArgs e)
         {
             this.Hide();
-            new frmSalary().ShowDialog();
+            new GUI.frmSalary2().ShowDialog();
             this.Close();
         }
 

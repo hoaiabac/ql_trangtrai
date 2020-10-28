@@ -33,21 +33,28 @@
             this.lbLogout = new System.Windows.Forms.LinkLabel();
             this.btnAdd = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtName = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtPhone = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.btnUpdate = new System.Windows.Forms.Button();
+            this.txtAddress = new System.Windows.Forms.TextBox();
             this.button3 = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvListEmployee = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.salaryperday = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label6 = new System.Windows.Forms.Label();
             this.button6 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.button1 = new System.Windows.Forms.Button();
+            this.btnDetele = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
+            this.cbSalaryPerDay = new System.Windows.Forms.ComboBox();
+            this.btnUpdate = new System.Windows.Forms.Button();
+            this.lbError = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvListEmployee)).BeginInit();
             this.SuspendLayout();
             // 
             // lbName
@@ -86,7 +93,7 @@
             // btnAdd
             // 
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdd.Location = new System.Drawing.Point(31, 209);
+            this.btnAdd.Location = new System.Drawing.Point(31, 241);
             this.btnAdd.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(170, 46);
@@ -105,12 +112,12 @@
             this.label1.TabIndex = 9;
             this.label1.Text = "Họ tên:";
             // 
-            // textBox1
+            // txtName
             // 
-            this.textBox1.Location = new System.Drawing.Point(163, 54);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(240, 27);
-            this.textBox1.TabIndex = 1;
+            this.txtName.Location = new System.Drawing.Point(163, 54);
+            this.txtName.Name = "txtName";
+            this.txtName.Size = new System.Drawing.Size(240, 27);
+            this.txtName.TabIndex = 1;
             // 
             // label3
             // 
@@ -122,12 +129,12 @@
             this.label3.TabIndex = 9;
             this.label3.Text = "Số điện thoại:";
             // 
-            // textBox2
+            // txtPhone
             // 
-            this.textBox2.Location = new System.Drawing.Point(163, 97);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(240, 27);
-            this.textBox2.TabIndex = 2;
+            this.txtPhone.Location = new System.Drawing.Point(163, 97);
+            this.txtPhone.Name = "txtPhone";
+            this.txtPhone.Size = new System.Drawing.Size(240, 27);
+            this.txtPhone.TabIndex = 2;
             // 
             // label4
             // 
@@ -139,29 +146,17 @@
             this.label4.TabIndex = 9;
             this.label4.Text = "Địa chỉ:";
             // 
-            // textBox3
+            // txtAddress
             // 
-            this.textBox3.Location = new System.Drawing.Point(163, 140);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(240, 27);
-            this.textBox3.TabIndex = 3;
-            // 
-            // btnUpdate
-            // 
-            this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUpdate.Location = new System.Drawing.Point(233, 209);
-            this.btnUpdate.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(170, 46);
-            this.btnUpdate.TabIndex = 5;
-            this.btnUpdate.Text = "Sửa thông tin";
-            this.btnUpdate.UseVisualStyleBackColor = true;
-            this.btnUpdate.Click += new System.EventHandler(this.btnAdd_Click);
+            this.txtAddress.Location = new System.Drawing.Point(163, 140);
+            this.txtAddress.Name = "txtAddress";
+            this.txtAddress.Size = new System.Drawing.Size(240, 27);
+            this.txtAddress.TabIndex = 3;
             // 
             // button3
             // 
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Location = new System.Drawing.Point(425, 209);
+            this.button3.Location = new System.Drawing.Point(425, 241);
             this.button3.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(170, 46);
@@ -170,33 +165,40 @@
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.btnAdd_Click);
             // 
-            // dataGridView1
+            // dgvListEmployee
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvListEmployee.AllowUserToAddRows = false;
+            this.dgvListEmployee.AllowUserToDeleteRows = false;
+            this.dgvListEmployee.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvListEmployee.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvListEmployee.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn4});
-            this.dataGridView1.Location = new System.Drawing.Point(31, 348);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(742, 273);
-            this.dataGridView1.TabIndex = 8;
+            this.dataGridViewTextBoxColumn4,
+            this.salaryperday});
+            this.dgvListEmployee.Location = new System.Drawing.Point(31, 348);
+            this.dgvListEmployee.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.dgvListEmployee.MultiSelect = false;
+            this.dgvListEmployee.Name = "dgvListEmployee";
+            this.dgvListEmployee.ReadOnly = true;
+            this.dgvListEmployee.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvListEmployee.Size = new System.Drawing.Size(742, 273);
+            this.dgvListEmployee.TabIndex = 8;
+            this.dgvListEmployee.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvListEmployee_CellClick);
+            this.dgvListEmployee.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvListEmployee_CellContentClick);
             // 
             // dataGridViewTextBoxColumn1
             // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "id";
             this.dataGridViewTextBoxColumn1.FillWeight = 43.25756F;
-            this.dataGridViewTextBoxColumn1.HeaderText = "STT";
+            this.dataGridViewTextBoxColumn1.HeaderText = "ID";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             this.dataGridViewTextBoxColumn1.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn2
             // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "name";
             this.dataGridViewTextBoxColumn2.FillWeight = 127.6098F;
             this.dataGridViewTextBoxColumn2.HeaderText = "Họ tên";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
@@ -204,6 +206,7 @@
             // 
             // dataGridViewTextBoxColumn3
             // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "phone";
             this.dataGridViewTextBoxColumn3.FillWeight = 101.5228F;
             this.dataGridViewTextBoxColumn3.HeaderText = "Số điện thoại";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
@@ -211,10 +214,18 @@
             // 
             // dataGridViewTextBoxColumn4
             // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "address";
             this.dataGridViewTextBoxColumn4.FillWeight = 127.6098F;
             this.dataGridViewTextBoxColumn4.HeaderText = "Địa chỉ";
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            // 
+            // salaryperday
+            // 
+            this.salaryperday.DataPropertyName = "salaryperday";
+            this.salaryperday.HeaderText = "Ngày lương";
+            this.salaryperday.Name = "salaryperday";
+            this.salaryperday.ReadOnly = true;
             // 
             // label6
             // 
@@ -230,7 +241,7 @@
             // button6
             // 
             this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Location = new System.Drawing.Point(631, 209);
+            this.button6.Location = new System.Drawing.Point(631, 241);
             this.button6.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(142, 46);
@@ -239,22 +250,106 @@
             this.button6.UseVisualStyleBackColor = true;
             this.button6.Click += new System.EventHandler(this.btnHome_Click);
             // 
+            // button1
+            // 
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Location = new System.Drawing.Point(31, 241);
+            this.button1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(170, 46);
+            this.button1.TabIndex = 4;
+            this.button1.Text = "Thêm nhân viên";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
+            // btnDetele
+            // 
+            this.btnDetele.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDetele.Location = new System.Drawing.Point(425, 241);
+            this.btnDetele.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.btnDetele.Name = "btnDetele";
+            this.btnDetele.Size = new System.Drawing.Size(170, 46);
+            this.btnDetele.TabIndex = 6;
+            this.btnDetele.Text = "Xóa nhân viên";
+            this.btnDetele.UseVisualStyleBackColor = true;
+            this.btnDetele.Click += new System.EventHandler(this.btnDetele_Click);
+            // 
+            // button5
+            // 
+            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button5.Location = new System.Drawing.Point(631, 241);
+            this.button5.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(142, 46);
+            this.button5.TabIndex = 7;
+            this.button5.Text = "Trang chủ";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.btnHome_Click);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(28, 188);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(112, 18);
+            this.label5.TabIndex = 9;
+            this.label5.Text = "Ngày Lương:";
+            // 
+            // cbSalaryPerDay
+            // 
+            this.cbSalaryPerDay.FormattingEnabled = true;
+            this.cbSalaryPerDay.Items.AddRange(new object[] {
+            "100000",
+            "150000",
+            "200000"});
+            this.cbSalaryPerDay.Location = new System.Drawing.Point(163, 184);
+            this.cbSalaryPerDay.Name = "cbSalaryPerDay";
+            this.cbSalaryPerDay.Size = new System.Drawing.Size(240, 26);
+            this.cbSalaryPerDay.TabIndex = 10;
+            // 
+            // btnUpdate
+            // 
+            this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUpdate.Location = new System.Drawing.Point(224, 241);
+            this.btnUpdate.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(170, 46);
+            this.btnUpdate.TabIndex = 4;
+            this.btnUpdate.Text = "Sửa nhân viên";
+            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
+            // 
+            // lbError
+            // 
+            this.lbError.AutoSize = true;
+            this.lbError.Location = new System.Drawing.Point(425, 101);
+            this.lbError.Name = "lbError";
+            this.lbError.Size = new System.Drawing.Size(0, 18);
+            this.lbError.TabIndex = 11;
+            // 
             // frmEmployee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(809, 659);
+            this.Controls.Add(this.lbError);
+            this.Controls.Add(this.cbSalaryPerDay);
+            this.Controls.Add(this.button5);
             this.Controls.Add(this.button6);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvListEmployee);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.txtPhone);
             this.Controls.Add(this.label3);
+            this.Controls.Add(this.btnDetele);
             this.Controls.Add(this.btnUpdate);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.btnAdd);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.txtAddress);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtName);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lbName);
             this.Controls.Add(this.label2);
@@ -268,7 +363,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmEmployee";
             this.Load += new System.EventHandler(this.frmEmployee_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvListEmployee)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -280,19 +375,26 @@
         private System.Windows.Forms.LinkLabel lbLogout;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtPhone;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Button btnUpdate;
+        private System.Windows.Forms.TextBox txtAddress;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvListEmployee;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnDetele;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.ComboBox cbSalaryPerDay;
+        private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn salaryperday;
+        private System.Windows.Forms.Label lbError;
     }
 }

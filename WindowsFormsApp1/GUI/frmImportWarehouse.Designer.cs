@@ -30,13 +30,11 @@
         {
             this.btnNo = new System.Windows.Forms.Button();
             this.btnYes = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.cbNameCommodity = new System.Windows.Forms.ComboBox();
+            this.txtUnitPrice = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtNumber = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -46,7 +44,7 @@
             // btnNo
             // 
             this.btnNo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNo.Location = new System.Drawing.Point(289, 287);
+            this.btnNo.Location = new System.Drawing.Point(287, 223);
             this.btnNo.Name = "btnNo";
             this.btnNo.Size = new System.Drawing.Size(140, 49);
             this.btnNo.TabIndex = 6;
@@ -58,7 +56,7 @@
             // btnYes
             // 
             this.btnYes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnYes.Location = new System.Drawing.Point(41, 287);
+            this.btnYes.Location = new System.Drawing.Point(39, 223);
             this.btnYes.Name = "btnYes";
             this.btnYes.Size = new System.Drawing.Size(140, 49);
             this.btnYes.TabIndex = 5;
@@ -67,39 +65,21 @@
             this.btnYes.UseVisualStyleBackColor = true;
             this.btnYes.Click += new System.EventHandler(this.btnYes_Click);
             // 
-            // comboBox1
+            // cbNameCommodity
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(217, 59);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(227, 31);
-            this.comboBox1.TabIndex = 1;
+            this.cbNameCommodity.FormattingEnabled = true;
+            this.cbNameCommodity.Location = new System.Drawing.Point(217, 59);
+            this.cbNameCommodity.Name = "cbNameCommodity";
+            this.cbNameCommodity.Size = new System.Drawing.Size(227, 31);
+            this.cbNameCommodity.TabIndex = 1;
             // 
-            // textBox3
+            // txtUnitPrice
             // 
-            this.textBox3.Location = new System.Drawing.Point(217, 222);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(227, 31);
-            this.textBox3.TabIndex = 4;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(30, 225);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(103, 23);
-            this.label6.TabIndex = 24;
-            this.label6.Text = "Tổng giá:";
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(217, 160);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(227, 31);
-            this.textBox2.TabIndex = 3;
+            this.txtUnitPrice.Location = new System.Drawing.Point(217, 160);
+            this.txtUnitPrice.Margin = new System.Windows.Forms.Padding(4);
+            this.txtUnitPrice.Name = "txtUnitPrice";
+            this.txtUnitPrice.Size = new System.Drawing.Size(227, 31);
+            this.txtUnitPrice.TabIndex = 3;
             // 
             // label7
             // 
@@ -121,13 +101,13 @@
             this.label5.TabIndex = 26;
             this.label5.Text = "Đơn giá:";
             // 
-            // textBox1
+            // txtNumber
             // 
-            this.textBox1.Location = new System.Drawing.Point(217, 110);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(227, 31);
-            this.textBox1.TabIndex = 2;
+            this.txtNumber.Location = new System.Drawing.Point(217, 110);
+            this.txtNumber.Margin = new System.Windows.Forms.Padding(4);
+            this.txtNumber.Name = "txtNumber";
+            this.txtNumber.Size = new System.Drawing.Size(227, 31);
+            this.txtNumber.TabIndex = 2;
             // 
             // label4
             // 
@@ -181,24 +161,23 @@
             this.ClientSize = new System.Drawing.Size(476, 375);
             this.Controls.Add(this.btnNo);
             this.Controls.Add(this.btnYes);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.cbNameCommodity);
+            this.Controls.Add(this.txtUnitPrice);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtNumber);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.lbLogout);
             this.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Margin = new System.Windows.Forms.Padding(6);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmImportWarehouse";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmImportWarehouse";
+            this.Load += new System.EventHandler(this.frmImportWarehouse_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -208,13 +187,11 @@
 
         private System.Windows.Forms.Button btnNo;
         private System.Windows.Forms.Button btnYes;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.ComboBox cbNameCommodity;
+        private System.Windows.Forms.TextBox txtUnitPrice;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtNumber;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
