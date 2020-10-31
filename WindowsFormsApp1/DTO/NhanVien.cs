@@ -8,7 +8,7 @@ namespace WindowsFormsApp1.DTO
 {
     class NhanVien
     {
-        public int id { set; get; }
+        public int id_nv { set; get; }
         public string name { set; get; }
         public string phone { set; get; }
         public string address { set; get; }

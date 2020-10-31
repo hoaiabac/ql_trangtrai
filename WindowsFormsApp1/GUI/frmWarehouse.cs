@@ -14,16 +14,20 @@ namespace WindowsFormsApp1
     {
         BLL.BLLKho bll;
         int id1 = 0;
+        Check ck;
         public frmWarehouse()
         {
             InitializeComponent();
             bll = new BLL.BLLKho();
+            ck = new Check();
         }
 
         private void frmWarehouse_Load(object sender, EventArgs e)
         {
+            lbName.Text = ck.loadName();
             dgvImportWarehouse.DataSource = bll.getAllNhapkho();
             dgvExportWarehouse.DataSource = bll.getAllXuatKho();
+            reset();
 
         }
 
@@ -63,47 +67,9 @@ namespace WindowsFormsApp1
             this.Close();
         }
 
-        private void lbName_Click(object sender, EventArgs e)
-        {
+       
 
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btDeleteCommodity_Click(object sender, EventArgs e)
-        {
-            if (id1 != 0)
-            {
-                DialogResult result = MessageBox.Show("Xác nhân xóa thông tin nhập kho", "THÔNG BÁO", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
-                if (result == DialogResult.Yes)
-                {
-                    DTO.NhapKho nk = new DTO.NhapKho();
-                    nk.id = id1;
-                    bll.deleteNK(nk);
-                    id1 = 0;
-                    dgvImportWarehouse.DataSource = bll.getAllNhapkho();
-                }
-                else
-                {
-                    MessageBox.Show("Hủy xóa thông tin nhập kho", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-            }
-            else
-            {
-                MessageBox.Show("Chưa chọn thông tin cần xóa", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-        }
-
-
-        private void dgvImportWarehouse_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            id1 = int.Parse(dgvImportWarehouse.CurrentRow.Cells[0].Value.ToString());
-        }
-
-        private void btDeletrExport_Click(object sender, EventArgs e)
+        private void btnDeletrExport_Click(object sender, EventArgs e)
         {
             if (id1 != 0)
             {
@@ -111,9 +77,9 @@ namespace WindowsFormsApp1
                 if (result == DialogResult.Yes)
                 {
                     DTO.XuatKho xk = new DTO.XuatKho();
-                    xk.id = id1;
+                    xk.id_xk = id1;
                     bll.deleteXK(xk);
-                    id1 = 0;
+                    reset();
                     dgvExportWarehouse.DataSource = bll.getAllXuatKho();
                 }
                 else
@@ -129,7 +95,51 @@ namespace WindowsFormsApp1
 
         private void dgvExportWarehouse_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            id1 = int.Parse(dgvExportWarehouse.CurrentRow.Cells[0].Value.ToString());
+            int numrow;
+            numrow = e.RowIndex;
+            id1 = int.Parse(dgvExportWarehouse.Rows[numrow].Cells[0].Value.ToString());
+            btnDeletrExport.Enabled = true;
+            btnDeleteImport.Enabled = false;
+        }
+        private void dgvImportWarehouse_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int numrow;
+            numrow = e.RowIndex;
+            id1 = int.Parse(dgvImportWarehouse.Rows[numrow].Cells[0].Value.ToString());
+            btnDeleteImport.Enabled = true;
+            btnDeletrExport.Enabled = false;
+        }
+
+
+        private void btnStatistical_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Chức năng đang phát triển.", "THÔNG BÁO");
+        }
+        public void reset()
+        {
+            id1 = 0;
+            btnDeleteImport.Enabled = false;
+            btnDeletrExport.Enabled = false;
+        }
+
+        private void btnDeleteImport_Click(object sender, EventArgs e)
+        {
+            if (id1 != 0)
+            {
+                DialogResult result = MessageBox.Show("Xác nhân xóa thông tin nhập kho", "THÔNG BÁO", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
+                if (result == DialogResult.Yes)
+                {
+                    DTO.NhapKho nk = new DTO.NhapKho();
+                    nk.id_nk = id1;
+                    bll.deleteNK(nk);
+                    reset();
+                    dgvImportWarehouse.DataSource = bll.getAllNhapkho();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Chưa chọn thông tin nhập xóa", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         private void dgvImportWarehouse_CellContentClick(object sender, DataGridViewCellEventArgs e)

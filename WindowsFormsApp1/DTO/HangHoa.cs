@@ -8,7 +8,7 @@ namespace WindowsFormsApp1.DTO
 {
     class HangHoa
     {
-        public int id { set; get; }
+        public int id_hh { set; get; }
         public string namecommodity { set; get; }
         public string unit { set; get; }
         public string distributor { set; get; }

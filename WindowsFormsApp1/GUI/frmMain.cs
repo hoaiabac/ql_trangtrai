@@ -7,19 +7,22 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WindowsFormsApp1.GUI;
 
 namespace WindowsFormsApp1
 {
     public partial class frmMain : Form
     {
+        Check ck;
         public frmMain()
         {
             InitializeComponent();
+            ck = new Check();
         }
 
         private void frmMain_Load(object sender, EventArgs e)
         {
-
+            lbName.Text = ck.loadName();
         }
 
         private void btnUser_Click(object sender, EventArgs e)
@@ -36,14 +39,9 @@ namespace WindowsFormsApp1
             this.Close();
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void lbName_Click(object sender, EventArgs e)
         {
-
+            
         }
 
         private void btnSalary_Click(object sender, EventArgs e)
@@ -57,6 +55,13 @@ namespace WindowsFormsApp1
         {
             this.Hide();
             new frmWarehouse().ShowDialog();
+            this.Close();
+        }
+
+        private void btnSetting_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new frmSetup().ShowDialog();
             this.Close();
         }
     }

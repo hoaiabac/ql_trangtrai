@@ -35,8 +35,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.btnLogin = new System.Windows.Forms.Button();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
-            this.label3 = new System.Windows.Forms.Label();
+            this.llbRegistration = new System.Windows.Forms.LinkLabel();
+            this.lbQues = new System.Windows.Forms.Label();
             this.lbNotice = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -66,7 +66,6 @@
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(189, 26);
             this.txtUsername.TabIndex = 1;
-            this.txtUsername.Text = "admin";
             this.txtUsername.DoubleClick += new System.EventHandler(this.txtUsername_DoubleClick);
             // 
             // label2
@@ -84,7 +83,6 @@
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(189, 26);
             this.txtPassword.TabIndex = 2;
-            this.txtPassword.Text = "123";
             this.txtPassword.UseSystemPasswordChar = true;
             this.txtPassword.DoubleClick += new System.EventHandler(this.txtPassword_DoubleClick);
             // 
@@ -99,25 +97,26 @@
             this.btnLogin.UseVisualStyleBackColor = true;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
-            // linkLabel1
+            // llbRegistration
             // 
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Location = new System.Drawing.Point(255, 278);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(69, 18);
-            this.linkLabel1.TabIndex = 4;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "Đăng ký";
-            this.linkLabel1.Click += new System.EventHandler(this.linkLabel1_Click);
+            this.llbRegistration.AutoSize = true;
+            this.llbRegistration.Location = new System.Drawing.Point(255, 278);
+            this.llbRegistration.Name = "llbRegistration";
+            this.llbRegistration.Size = new System.Drawing.Size(69, 18);
+            this.llbRegistration.TabIndex = 4;
+            this.llbRegistration.TabStop = true;
+            this.llbRegistration.Text = "Đăng ký";
+            this.llbRegistration.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llbRegistration_LinkClicked);
+            this.llbRegistration.Click += new System.EventHandler(this.linkLabel1_Click);
             // 
-            // label3
+            // lbQues
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(70, 278);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(182, 18);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "Bạn chưa có tài khoản?";
+            this.lbQues.AutoSize = true;
+            this.lbQues.Location = new System.Drawing.Point(70, 278);
+            this.lbQues.Name = "lbQues";
+            this.lbQues.Size = new System.Drawing.Size(182, 18);
+            this.lbQues.TabIndex = 5;
+            this.lbQues.Text = "Bạn chưa có tài khoản?";
             // 
             // lbNotice
             // 
@@ -136,8 +135,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(419, 360);
             this.Controls.Add(this.lbNotice);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.linkLabel1);
+            this.Controls.Add(this.lbQues);
+            this.Controls.Add(this.llbRegistration);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.txtUsername);
@@ -167,8 +166,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.Button btnLogin;
-        private System.Windows.Forms.LinkLabel linkLabel1;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.LinkLabel llbRegistration;
+        private System.Windows.Forms.Label lbQues;
         private System.Windows.Forms.Label lbNotice;
     }
 }

@@ -27,8 +27,10 @@ namespace WindowsFormsApp1
         }
         private void frmListCommodity_Load(object sender, EventArgs e)
         {
+            txtNameCommodity.Focus();
+            lbName1.Text = ck.loadName();
             loadDgv();
-            resetTextbox();
+            reset();
 
         }
 
@@ -67,7 +69,7 @@ namespace WindowsFormsApp1
                 hh.distributor = txtDistributor.Text;
                 hh.unit = cbUnit.Text;
                 bll.insertHH(hh);
-                resetTextbox();
+                reset();
                 loadDgv();
             }
             else
@@ -75,19 +77,27 @@ namespace WindowsFormsApp1
                 MessageBox.Show("Thiếu thông tin nhân viên", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
-        public void resetTextbox()
+        public void reset()
         {
             txtNameCommodity.Clear();
             txtDistributor.Clear();
             cbUnit.SelectedIndex = 0;
+            btnAddSpeciesCommodity.Enabled = true;
+            btnUpdateSpeciesCommodity.Enabled = false;
+            btnDeleteSpeciesCommodity.Enabled = false;
         }
 
         private void dgvListCommodity_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            id1 = int.Parse(dgvListCommodity.CurrentRow.Cells[0].Value.ToString());
-            txtNameCommodity.Text = dgvListCommodity.CurrentRow.Cells[1].Value.ToString();
-            cbUnit.Text = dgvListCommodity.CurrentRow.Cells[2].Value.ToString();
-            txtDistributor.Text = dgvListCommodity.CurrentRow.Cells[3].Value.ToString();
+            btnAddSpeciesCommodity.Enabled = false;
+            btnUpdateSpeciesCommodity.Enabled = true;
+            btnDeleteSpeciesCommodity.Enabled = true;
+            int numrow;
+            numrow = e.RowIndex;
+            id1 = int.Parse(dgvListCommodity.Rows[numrow].Cells[0].Value.ToString());
+            txtNameCommodity.Text = dgvListCommodity.Rows[numrow].Cells[1].Value.ToString();
+            cbUnit.Text = dgvListCommodity.Rows[numrow].Cells[2].Value.ToString();
+            txtDistributor.Text = dgvListCommodity.Rows[numrow].Cells[3].Value.ToString();
             
         }
 
@@ -98,13 +108,13 @@ namespace WindowsFormsApp1
                 if (ck.checkNullTextbox(txtNameCommodity.Text.ToString()) && ck.checkNullTextbox(txtDistributor.Text.ToString()))
                 {
                     DTO.HangHoa hh = new DTO.HangHoa();
-                    hh.id = id1;
+                    hh.id_hh = id1;
                     hh.namecommodity = txtNameCommodity.Text;
                     hh.distributor = txtDistributor.Text;
                     hh.unit = cbUnit.Text;
                     bll.updateHH(hh);
                     loadDgv();
-                    resetTextbox();
+                    reset();
                 }
                 else
                 {
@@ -130,21 +140,26 @@ namespace WindowsFormsApp1
                 if (result == DialogResult.Yes)
                 {
                     DTO.HangHoa hh = new DTO.HangHoa();
-                    hh.id = id1;
+                    hh.id_hh = id1;
                     bll.deleteHH(hh);
                     loadDgv();
-                    resetTextbox();
+                    reset();
                 }
                 else
                 {
                     MessageBox.Show("Hủy xóa loại hàng", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    resetTextbox();
+                    reset();
                 }
             }
             else
             {
                 MessageBox.Show("Chưa chọn loại hàng cần xóa", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            reset();
         }
     }
 }

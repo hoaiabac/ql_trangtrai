@@ -22,8 +22,11 @@ namespace WindowsFormsApp1
         }
         private void frmImportWarehouse_Load(object sender, EventArgs e)
         {
+            lbName.Text = ck.loadName();
             cbNameCommodity.DataSource = bll.loadComboBox();
-            cbNameCommodity.ValueMember = "namecommodity";
+            cbNameCommodity.ValueMember = "id_hh";
+            cbNameCommodity.DisplayMember = "namecommodity";
+            reset();
         }
         private void lbLogout_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
@@ -40,57 +43,73 @@ namespace WindowsFormsApp1
                 if(result1 == DialogResult.Yes)
                 {
                     DTO.NhapKho nk = new DTO.NhapKho();
+                    nk.id_hh = int.Parse(cbNameCommodity.SelectedValue.ToString());
                     nk.namecommodity = cbNameCommodity.Text;
                     nk.unitprice = int.Parse(txtUnitPrice.Text);
                     nk.number = int.Parse(txtNumber.Text);
                     nk.totalprice = (int.Parse(txtNumber.Text)*int.Parse(txtUnitPrice.Text));
                     DateTime tn = DateTime.Now;
                     nk.time = tn.ToString("yyyy-MM-dd HH:mm:ss");
-                    //MessageBox.Show(nk.time, "");
                     bll.insertNK(nk);
-                    resetTextbox();
-                    DialogResult result2 = MessageBox.Show("Tiếp tục nhập kho", "Nhập kho thành công", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
-                    if(result2 == DialogResult.No){
-                        this.Hide();
-                        new frmWarehouse().ShowDialog();
-                        this.Close();
-                    }
-                    else
-                    {
-                        resetTextbox(); 
-                    }
-                    
+                    reset();   
                 }
                 else
                 {
                     MessageBox.Show("Hủy nhập kho", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    resetTextbox();
+                    reset();
                 }   
             }
             else
             {
-                MessageBox.Show("Thiếu thông tin hàng hóa", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                lbErrorTotal.Text = "Thông tin bắt buộc!";
+                lbErrorNumber.Text = "Thông tin bắt buộc!";
             }
         }
 
 
         private void btnNo_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("Nhập kho thất bại.", "Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Hand);
-            if (result == DialogResult.OK)
+            if (ck.checkNullTextbox(txtNumber.Text.ToString()) || ck.checkNullTextbox(txtUnitPrice.Text.ToString()))
+            {
+                DialogResult result = MessageBox.Show("Xác nhận hủy nhập kho.", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (result == DialogResult.Yes)
+                {
+                    this.Hide();
+                    new frmWarehouse().ShowDialog();
+                    this.Close();
+                }
+            }
+            else
             {
                 this.Hide();
                 new frmWarehouse().ShowDialog();
                 this.Close();
             }
+             
         }
-        public void resetTextbox()
+        public void reset()
         {
             txtNumber.Clear();
             txtUnitPrice.Clear();
             cbNameCommodity.SelectedIndex = 0;
+            lbErrorNumber.Text = "";
+            lbErrorTotal.Text = "";
         }
 
+        private void txtNumber_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
 
+        private void txtUnitPrice_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
     }
 }

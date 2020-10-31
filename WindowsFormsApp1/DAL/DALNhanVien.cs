@@ -20,7 +20,7 @@ namespace WindowsFormsApp1.DAL
         public DataTable getAllNhanVien()
         {
             // B1: Tạo truy vấn
-            string sql = "SELECT * FROM tb_employee";
+            string sql = "SELECT id_nv, name, phone, address, salaryperday FROM tb_employee";
             // B2: Tạo kết nối  đến CSDL
             MySqlConnection con = dc.getConnection();
             // B3: Khởi tạo đối tượng lớp MySqlDataAdapter
@@ -57,13 +57,13 @@ namespace WindowsFormsApp1.DAL
         }
         public bool updateNV(DTO.NhanVien nv)
         {
-            string sql = "UPDATE tb_employee SET name=@name, phone=@phone, address=@address, salaryperday=@salaryperday WHERE id=@id";
+            string sql = "UPDATE tb_employee SET name=@name, phone=@phone, address=@address, salaryperday=@salaryperday WHERE id_nv=@id";
             MySqlConnection con = dc.getConnection();
             try
             {
                 cmd = new MySqlCommand(sql, con);
                 con.Open();
-                cmd.Parameters.Add("id", MySqlDbType.VarChar).Value = nv.id;
+                cmd.Parameters.Add("id", MySqlDbType.VarChar).Value = nv.id_nv;
                 cmd.Parameters.Add("name", MySqlDbType.VarChar).Value = nv.name;
                 cmd.Parameters.Add("phone", MySqlDbType.VarChar).Value = nv.phone;
                 cmd.Parameters.Add("address", MySqlDbType.VarChar).Value = nv.address;
@@ -79,13 +79,13 @@ namespace WindowsFormsApp1.DAL
         }
         public bool deleteNV(DTO.NhanVien nv)
         {
-            string sql = "DELETE FROM tb_employee WHERE id=@id";
+            string sql = "DELETE FROM tb_employee WHERE id_nv=@id";
             MySqlConnection con = dc.getConnection();
             try
             {
                 cmd = new MySqlCommand(sql, con);
                 con.Open();
-                cmd.Parameters.Add("id", MySqlDbType.VarChar).Value = nv.id;
+                cmd.Parameters.Add("id", MySqlDbType.VarChar).Value = nv.id_nv;
                 cmd.ExecuteNonQuery();
                 con.Close();
             }

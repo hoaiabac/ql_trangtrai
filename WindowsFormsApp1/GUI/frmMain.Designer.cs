@@ -82,8 +82,9 @@
             this.btnSetting.Name = "btnSetting";
             this.btnSetting.Size = new System.Drawing.Size(242, 128);
             this.btnSetting.TabIndex = 4;
-            this.btnSetting.Text = "Thiết lập";
+            this.btnSetting.Text = "Đổi mật khẩu";
             this.btnSetting.UseVisualStyleBackColor = true;
+            this.btnSetting.Click += new System.EventHandler(this.btnSetting_Click);
             // 
             // lbLogout
             // 
@@ -104,7 +105,6 @@
             this.label1.Size = new System.Drawing.Size(76, 18);
             this.label1.TabIndex = 2;
             this.label1.Text = "Xin chào,";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // lbName
             // 

@@ -40,3 +40,5 @@ C:\Users\bacbo\OneDrive\Máy tính\TTCN\ql_trangtrai\WindowsFormsApp1\bin\Debug\
 C:\Users\bacbo\OneDrive\Máy tính\TTCN\ql_trangtrai\WindowsFormsApp1\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 C:\Users\bacbo\OneDrive\Máy tính\TTCN\ql_trangtrai\WindowsFormsApp1\obj\Debug\QuanLyTrangTrai.csproj.CopyComplete
 C:\Users\bacbo\OneDrive\Máy tính\TTCN\ql_trangtrai\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.GUI.frmSalary2.resources
+C:\Users\bacbo\OneDrive\Máy tính\TTCN\ql_trangtrai\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.GUI.frmSetup.resources
+C:\Users\bacbo\OneDrive\Máy tính\TTCN\ql_trangtrai\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.GUI.frmRegisTration.resources

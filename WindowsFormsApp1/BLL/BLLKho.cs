@@ -40,7 +40,7 @@ namespace WindowsFormsApp1.BLL
         }
         public DataTable loadComboBox()
         {
-            return dalk.loadComboBox("namecommodity", "tb_commodity");
+            return dalk.loadComboBox("namecommodity", "tb_commodity", "id_hh");
         }
     }
 }

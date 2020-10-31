@@ -23,8 +23,10 @@ namespace WindowsFormsApp1
 
         private void frmOutWarehouse_Load(object sender, EventArgs e)
         {
+            lbName.Text = ck.loadName();
             cbNameCommodity.DataSource = bll.loadComboBox();
             cbNameCommodity.ValueMember = "namecommodity";
+            reset();
         }
 
         private void lbLogout_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -47,47 +49,54 @@ namespace WindowsFormsApp1
                     DateTime tn = DateTime.Now;
                     xk.time = tn.ToString("yyyy-MM-dd HH:mm:ss");
                     bll.insertXK(xk);
-                    resetTextbox();
-                    DialogResult result2 = MessageBox.Show("Tiếp tục nhập kho", "Nhập kho thành công", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
-                    if (result2 == DialogResult.No)
-                    {
-                        this.Hide();
-                        new frmWarehouse().ShowDialog();
-                        this.Close();
-                    }
-                    else
-                    {
-                        resetTextbox();
-                    }
-
+                    reset();
                 }
                 else
                 {
-                    MessageBox.Show("Hủy nhập kho", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    resetTextbox();
+                    reset();
                 }
             }
             else
             {
-                MessageBox.Show("Thiếu thông tin hàng hóa", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                lbErrorNumber.Text = "Thông tin bắt buộc!";
             }
         }
 
-        private void resetTextbox()
+        private void reset()
         {
             cbNameCommodity.SelectedIndex = 0;
             txtNumber.Clear();
+            lbErrorNumber.Text = "";
         }
 
         private void btnNo_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("Xuất thất bại.", "Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Hand);
-            if (result == DialogResult.OK)
+            if (ck.checkNullTextbox(txtNumber.Text.ToString()))
+            {
+                DialogResult result = MessageBox.Show("Xác nhân hủy xuất kho.", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (result == DialogResult.Yes)
+                {
+                    this.Hide();
+                    new frmWarehouse().ShowDialog();
+                    this.Close();
+                }
+            }
+            else
             {
                 this.Hide();
                 new frmWarehouse().ShowDialog();
                 this.Close();
             }
+             
         }
+
+        private void txtNumber_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
     }
 }

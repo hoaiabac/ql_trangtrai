@@ -34,26 +34,26 @@
             this.label1 = new System.Windows.Forms.Label();
             this.lbLogout = new System.Windows.Forms.LinkLabel();
             this.dgvImportWarehouse = new System.Windows.Forms.DataGridView();
-            this.btnImportWarehouse = new System.Windows.Forms.Button();
-            this.btnOutWarehouse = new System.Windows.Forms.Button();
-            this.dgvExportWarehouse = new System.Windows.Forms.DataGridView();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.button4 = new System.Windows.Forms.Button();
-            this.btnListCommodity = new System.Windows.Forms.Button();
-            this.btnHome = new System.Windows.Forms.Button();
-            this.btDeleteCommodity = new System.Windows.Forms.Button();
-            this.btDeletrExport = new System.Windows.Forms.Button();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.namecommodity = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.number = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.unitprice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.totallprice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.timeimport = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnImportWarehouse = new System.Windows.Forms.Button();
+            this.btnOutWarehouse = new System.Windows.Forms.Button();
+            this.dgvExportWarehouse = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.timeout = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.btnStatistical = new System.Windows.Forms.Button();
+            this.btnListCommodity = new System.Windows.Forms.Button();
+            this.btnHome = new System.Windows.Forms.Button();
+            this.btnDeleteImport = new System.Windows.Forms.Button();
+            this.btnDeletrExport = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvImportWarehouse)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvExportWarehouse)).BeginInit();
             this.SuspendLayout();
@@ -62,29 +62,27 @@
             // 
             this.lbName.AutoSize = true;
             this.lbName.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbName.Location = new System.Drawing.Point(119, 28);
+            this.lbName.Location = new System.Drawing.Point(103, 9);
             this.lbName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbName.Name = "lbName";
             this.lbName.Size = new System.Drawing.Size(37, 18);
             this.lbName.TabIndex = 10;
             this.lbName.Text = "Bắc";
-            this.lbName.Click += new System.EventHandler(this.lbName_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(14, 28);
+            this.label1.Location = new System.Drawing.Point(15, 11);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(70, 16);
             this.label1.TabIndex = 9;
             this.label1.Text = "Xin chào,";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // lbLogout
             // 
             this.lbLogout.AutoSize = true;
-            this.lbLogout.Location = new System.Drawing.Point(1138, 30);
+            this.lbLogout.Location = new System.Drawing.Point(1139, 13);
             this.lbLogout.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbLogout.Name = "lbLogout";
             this.lbLogout.Size = new System.Drawing.Size(75, 16);
@@ -116,132 +114,9 @@
             this.dgvImportWarehouse.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvImportWarehouse_CellClick);
             this.dgvImportWarehouse.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvImportWarehouse_CellContentClick);
             // 
-            // btnImportWarehouse
-            // 
-            this.btnImportWarehouse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnImportWarehouse.Location = new System.Drawing.Point(198, 487);
-            this.btnImportWarehouse.Name = "btnImportWarehouse";
-            this.btnImportWarehouse.Size = new System.Drawing.Size(140, 49);
-            this.btnImportWarehouse.TabIndex = 6;
-            this.btnImportWarehouse.Text = "Nhập kho";
-            this.btnImportWarehouse.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnImportWarehouse.UseVisualStyleBackColor = true;
-            this.btnImportWarehouse.Click += new System.EventHandler(this.btnImportWarehouse_Click);
-            // 
-            // btnOutWarehouse
-            // 
-            this.btnOutWarehouse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnOutWarehouse.Location = new System.Drawing.Point(847, 487);
-            this.btnOutWarehouse.Name = "btnOutWarehouse";
-            this.btnOutWarehouse.Size = new System.Drawing.Size(140, 49);
-            this.btnOutWarehouse.TabIndex = 8;
-            this.btnOutWarehouse.Text = "Xuất kho";
-            this.btnOutWarehouse.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnOutWarehouse.UseVisualStyleBackColor = true;
-            this.btnOutWarehouse.Click += new System.EventHandler(this.btnOutWarehouse_Click);
-            // 
-            // dgvExportWarehouse
-            // 
-            this.dgvExportWarehouse.AllowUserToAddRows = false;
-            this.dgvExportWarehouse.AllowUserToDeleteRows = false;
-            this.dgvExportWarehouse.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvExportWarehouse.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvExportWarehouse.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn4,
-            this.timeout});
-            this.dgvExportWarehouse.Location = new System.Drawing.Point(743, 194);
-            this.dgvExportWarehouse.MultiSelect = false;
-            this.dgvExportWarehouse.Name = "dgvExportWarehouse";
-            this.dgvExportWarehouse.ReadOnly = true;
-            this.dgvExportWarehouse.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvExportWarehouse.Size = new System.Drawing.Size(470, 274);
-            this.dgvExportWarehouse.TabIndex = 7;
-            this.dgvExportWarehouse.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvExportWarehouse_CellClick);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Verdana", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(11, 141);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(249, 25);
-            this.label2.TabIndex = 15;
-            this.label2.Text = "Danh sách nhập kho";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Verdana", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(738, 141);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(243, 25);
-            this.label3.TabIndex = 15;
-            this.label3.Text = "Danh sách xuất kho";
-            // 
-            // button4
-            // 
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Location = new System.Drawing.Point(16, 60);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(140, 49);
-            this.button4.TabIndex = 2;
-            this.button4.Text = "Thống kê";
-            this.button4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.button4.UseVisualStyleBackColor = true;
-            // 
-            // btnListCommodity
-            // 
-            this.btnListCommodity.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnListCommodity.Location = new System.Drawing.Point(162, 60);
-            this.btnListCommodity.Name = "btnListCommodity";
-            this.btnListCommodity.Size = new System.Drawing.Size(140, 49);
-            this.btnListCommodity.TabIndex = 3;
-            this.btnListCommodity.Text = "Danh sách hàng hóa";
-            this.btnListCommodity.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnListCommodity.UseVisualStyleBackColor = true;
-            this.btnListCommodity.Click += new System.EventHandler(this.btnListCommodity_Click);
-            // 
-            // btnHome
-            // 
-            this.btnHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnHome.Location = new System.Drawing.Point(308, 60);
-            this.btnHome.Name = "btnHome";
-            this.btnHome.Size = new System.Drawing.Size(140, 49);
-            this.btnHome.TabIndex = 4;
-            this.btnHome.Text = "Trang chủ";
-            this.btnHome.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnHome.UseVisualStyleBackColor = true;
-            this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
-            // 
-            // btDeleteCommodity
-            // 
-            this.btDeleteCommodity.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btDeleteCommodity.Location = new System.Drawing.Point(362, 487);
-            this.btDeleteCommodity.Name = "btDeleteCommodity";
-            this.btDeleteCommodity.Size = new System.Drawing.Size(140, 49);
-            this.btDeleteCommodity.TabIndex = 6;
-            this.btDeleteCommodity.Text = "Xóa nhập";
-            this.btDeleteCommodity.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btDeleteCommodity.UseVisualStyleBackColor = true;
-            this.btDeleteCommodity.Click += new System.EventHandler(this.btDeleteCommodity_Click);
-            // 
-            // btDeletrExport
-            // 
-            this.btDeletrExport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btDeletrExport.Location = new System.Drawing.Point(993, 487);
-            this.btDeletrExport.Name = "btDeletrExport";
-            this.btDeletrExport.Size = new System.Drawing.Size(140, 49);
-            this.btDeletrExport.TabIndex = 6;
-            this.btDeletrExport.Text = "Xóa xuất";
-            this.btDeletrExport.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btDeletrExport.UseVisualStyleBackColor = true;
-            this.btDeletrExport.Click += new System.EventHandler(this.btDeletrExport_Click);
-            // 
             // id
             // 
-            this.id.DataPropertyName = "id";
+            this.id.DataPropertyName = "id_nk";
             this.id.FillWeight = 60.83126F;
             this.id.HeaderText = "ID";
             this.id.Name = "id";
@@ -290,9 +165,53 @@
             this.timeimport.Name = "timeimport";
             this.timeimport.ReadOnly = true;
             // 
+            // btnImportWarehouse
+            // 
+            this.btnImportWarehouse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnImportWarehouse.Location = new System.Drawing.Point(198, 487);
+            this.btnImportWarehouse.Name = "btnImportWarehouse";
+            this.btnImportWarehouse.Size = new System.Drawing.Size(140, 49);
+            this.btnImportWarehouse.TabIndex = 6;
+            this.btnImportWarehouse.Text = "Nhập kho";
+            this.btnImportWarehouse.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnImportWarehouse.UseVisualStyleBackColor = true;
+            this.btnImportWarehouse.Click += new System.EventHandler(this.btnImportWarehouse_Click);
+            // 
+            // btnOutWarehouse
+            // 
+            this.btnOutWarehouse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnOutWarehouse.Location = new System.Drawing.Point(847, 487);
+            this.btnOutWarehouse.Name = "btnOutWarehouse";
+            this.btnOutWarehouse.Size = new System.Drawing.Size(140, 49);
+            this.btnOutWarehouse.TabIndex = 8;
+            this.btnOutWarehouse.Text = "Xuất kho";
+            this.btnOutWarehouse.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnOutWarehouse.UseVisualStyleBackColor = true;
+            this.btnOutWarehouse.Click += new System.EventHandler(this.btnOutWarehouse_Click);
+            // 
+            // dgvExportWarehouse
+            // 
+            this.dgvExportWarehouse.AllowUserToAddRows = false;
+            this.dgvExportWarehouse.AllowUserToDeleteRows = false;
+            this.dgvExportWarehouse.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvExportWarehouse.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvExportWarehouse.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn4,
+            this.timeout});
+            this.dgvExportWarehouse.Location = new System.Drawing.Point(743, 194);
+            this.dgvExportWarehouse.MultiSelect = false;
+            this.dgvExportWarehouse.Name = "dgvExportWarehouse";
+            this.dgvExportWarehouse.ReadOnly = true;
+            this.dgvExportWarehouse.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvExportWarehouse.Size = new System.Drawing.Size(470, 274);
+            this.dgvExportWarehouse.TabIndex = 7;
+            this.dgvExportWarehouse.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvExportWarehouse_CellClick);
+            // 
             // dataGridViewTextBoxColumn1
             // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "id";
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "id_xk";
             this.dataGridViewTextBoxColumn1.FillWeight = 35.78732F;
             this.dataGridViewTextBoxColumn1.HeaderText = "ID";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
@@ -325,18 +244,98 @@
             this.timeout.Name = "timeout";
             this.timeout.ReadOnly = true;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Verdana", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(11, 141);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(249, 25);
+            this.label2.TabIndex = 15;
+            this.label2.Text = "Danh sách nhập kho";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Verdana", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(738, 141);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(243, 25);
+            this.label3.TabIndex = 15;
+            this.label3.Text = "Danh sách xuất kho";
+            // 
+            // btnStatistical
+            // 
+            this.btnStatistical.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnStatistical.Location = new System.Drawing.Point(162, 60);
+            this.btnStatistical.Name = "btnStatistical";
+            this.btnStatistical.Size = new System.Drawing.Size(140, 49);
+            this.btnStatistical.TabIndex = 2;
+            this.btnStatistical.Text = "Thống kê";
+            this.btnStatistical.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnStatistical.UseVisualStyleBackColor = true;
+            this.btnStatistical.Click += new System.EventHandler(this.btnStatistical_Click);
+            // 
+            // btnListCommodity
+            // 
+            this.btnListCommodity.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnListCommodity.Location = new System.Drawing.Point(16, 60);
+            this.btnListCommodity.Name = "btnListCommodity";
+            this.btnListCommodity.Size = new System.Drawing.Size(140, 49);
+            this.btnListCommodity.TabIndex = 3;
+            this.btnListCommodity.Text = "Danh sách hàng hóa";
+            this.btnListCommodity.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnListCommodity.UseVisualStyleBackColor = true;
+            this.btnListCommodity.Click += new System.EventHandler(this.btnListCommodity_Click);
+            // 
+            // btnHome
+            // 
+            this.btnHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHome.Location = new System.Drawing.Point(308, 60);
+            this.btnHome.Name = "btnHome";
+            this.btnHome.Size = new System.Drawing.Size(140, 49);
+            this.btnHome.TabIndex = 4;
+            this.btnHome.Text = "Trang chủ";
+            this.btnHome.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnHome.UseVisualStyleBackColor = true;
+            this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
+            // 
+            // btnDeleteImport
+            // 
+            this.btnDeleteImport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDeleteImport.Location = new System.Drawing.Point(362, 487);
+            this.btnDeleteImport.Name = "btnDeleteImport";
+            this.btnDeleteImport.Size = new System.Drawing.Size(140, 49);
+            this.btnDeleteImport.TabIndex = 6;
+            this.btnDeleteImport.Text = "Xóa nhập";
+            this.btnDeleteImport.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnDeleteImport.UseVisualStyleBackColor = true;
+            this.btnDeleteImport.Click += new System.EventHandler(this.btnDeleteImport_Click);
+            // 
+            // btnDeletrExport
+            // 
+            this.btnDeletrExport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDeletrExport.Location = new System.Drawing.Point(993, 487);
+            this.btnDeletrExport.Name = "btnDeletrExport";
+            this.btnDeletrExport.Size = new System.Drawing.Size(140, 49);
+            this.btnDeletrExport.TabIndex = 6;
+            this.btnDeletrExport.Text = "Xóa xuất";
+            this.btnDeletrExport.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnDeletrExport.UseVisualStyleBackColor = true;
+            this.btnDeletrExport.Click += new System.EventHandler(this.btnDeletrExport_Click);
+            // 
             // frmWarehouse
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1231, 574);
+            this.ClientSize = new System.Drawing.Size(1231, 554);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.btDeletrExport);
-            this.Controls.Add(this.btDeleteCommodity);
+            this.Controls.Add(this.btnDeletrExport);
+            this.Controls.Add(this.btnDeleteImport);
             this.Controls.Add(this.btnImportWarehouse);
             this.Controls.Add(this.btnOutWarehouse);
-            this.Controls.Add(this.button4);
+            this.Controls.Add(this.btnStatistical);
             this.Controls.Add(this.btnListCommodity);
             this.Controls.Add(this.btnHome);
             this.Controls.Add(this.dgvExportWarehouse);
@@ -350,7 +349,7 @@
             this.MinimizeBox = false;
             this.Name = "frmWarehouse";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmWarehouse";
+            this.Text = "Kho";
             this.Load += new System.EventHandler(this.frmWarehouse_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvImportWarehouse)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvExportWarehouse)).EndInit();
@@ -370,11 +369,11 @@
         private System.Windows.Forms.DataGridView dgvExportWarehouse;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btnStatistical;
         private System.Windows.Forms.Button btnListCommodity;
         private System.Windows.Forms.Button btnHome;
-        private System.Windows.Forms.Button btDeleteCommodity;
-        private System.Windows.Forms.Button btDeletrExport;
+        private System.Windows.Forms.Button btnDeleteImport;
+        private System.Windows.Forms.Button btnDeletrExport;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
         private System.Windows.Forms.DataGridViewTextBoxColumn namecommodity;
         private System.Windows.Forms.DataGridViewTextBoxColumn number;

@@ -50,13 +50,13 @@ namespace WindowsFormsApp1.DAL
         }
         public bool updateHH(DTO.HangHoa hh)
         {
-            string sql = "UPDATE tb_commodity SET namecommodity=@namecommodity, unit=@unit, distributor=@distributor WHERE id=@id";
+            string sql = "UPDATE tb_commodity SET namecommodity=@namecommodity, unit=@unit, distributor=@distributor WHERE id_hh=@id";
             MySqlConnection con = dc.getConnection();
             try
             {
                 cmd = new MySqlCommand(sql, con);
                 con.Open();
-                cmd.Parameters.Add("id", MySqlDbType.VarChar).Value = hh.id;
+                cmd.Parameters.Add("id", MySqlDbType.VarChar).Value = hh.id_hh;
                 cmd.Parameters.Add("namecommodity", MySqlDbType.VarChar).Value = hh.namecommodity;
                 cmd.Parameters.Add("unit", MySqlDbType.VarChar).Value = hh.unit;
                 cmd.Parameters.Add("distributor", MySqlDbType.VarChar).Value = hh.distributor;
@@ -71,13 +71,13 @@ namespace WindowsFormsApp1.DAL
         }
         public bool deleteHH(DTO.HangHoa hh)
         {
-            string sql = "DELETE FROM tb_commodity  WHERE id=@id";
+            string sql = "DELETE FROM tb_commodity  WHERE id_hh=@id";
             MySqlConnection con = dc.getConnection();
             try
             {
                 cmd = new MySqlCommand(sql, con);
                 con.Open();
-                cmd.Parameters.Add("id", MySqlDbType.VarChar).Value = hh.id;
+                cmd.Parameters.Add("id", MySqlDbType.VarChar).Value = hh.id_hh;
                 cmd.ExecuteNonQuery();
                 con.Close();
             }

@@ -8,7 +8,8 @@ namespace WindowsFormsApp1.DTO
 {
     class NhapKho
     {
-        public int id { set; get; }
+        public int id_nk { set; get; }
+        public int id_hh { set; get; }
         public string namecommodity { set; get; }
         public int unitprice { set; get; }
         public int number { set; get; }

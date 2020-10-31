@@ -92,11 +92,17 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BLL\BLLDangKy.cs" />
+    <Compile Include="BLL\BLLDangNhap.cs" />
+    <Compile Include="BLL\BLLDoiMK.cs" />
     <Compile Include="BLL\BLLHangHoa.cs" />
     <Compile Include="BLL\BLLKho.cs" />
     <Compile Include="BLL\BLLLuong.cs" />
     <Compile Include="BLL\BLLNhanVien.cs" />
     <Compile Include="Check.cs" />
+    <Compile Include="DAL\DALDangKy.cs" />
+    <Compile Include="DAL\DALDangNhap.cs" />
+    <Compile Include="DAL\DALDoiMK.cs" />
     <Compile Include="DAL\DALHang.cs" />
     <Compile Include="DAL\DALKho.cs" />
     <Compile Include="DAL\DALLuong.cs" />
@@ -106,6 +112,7 @@
     <Compile Include="DTO\Luong.cs" />
     <Compile Include="DTO\NhanVien.cs" />
     <Compile Include="DTO\NhapKho.cs" />
+    <Compile Include="DTO\User.cs" />
     <Compile Include="DTO\XuatKho.cs" />
     <Compile Include="GUI\frmEmployee.cs">
       <SubType>Form</SubType>
@@ -149,11 +156,23 @@
     <Compile Include="GUI\frmSalary2.Designer.cs">
       <DependentUpon>frmSalary2.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\frmSetup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\frmSetup.Designer.cs">
+      <DependentUpon>frmSetup.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\frmWarehouse.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GUI\frmWarehouse.Designer.cs">
       <DependentUpon>frmWarehouse.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\frmRegisTration.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\frmRegisTration.Designer.cs">
+      <DependentUpon>frmRegisTration.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -178,8 +197,14 @@
     <EmbeddedResource Include="GUI\frmSalary2.resx">
       <DependentUpon>frmSalary2.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\frmSetup.resx">
+      <DependentUpon>frmSetup.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\frmWarehouse.resx">
       <DependentUpon>frmWarehouse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\frmRegisTration.resx">
+      <DependentUpon>frmRegisTration.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

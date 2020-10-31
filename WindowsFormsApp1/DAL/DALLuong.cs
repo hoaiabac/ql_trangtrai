@@ -19,7 +19,7 @@ namespace WindowsFormsApp1.DAL
         }
         public DataTable getAllLuong()
         {
-            string sql = "SELECT id, name, salaryperday,numberpayday,totalsalary FROM tb_employee";
+            string sql = "SELECT id_nv, name, salaryperday,numberpayday,totalsalary FROM tb_employee";
             //string sql = "SELECT * FROM tb_employee";
             MySqlConnection con = dc.getConnection();
             da = new MySqlDataAdapter(sql, con);
@@ -31,13 +31,13 @@ namespace WindowsFormsApp1.DAL
         }
         public bool updateLuong(DTO.NhanVien nv)
         {
-            string sql = "UPDATE tb_employee SET numberpayday=@numberpayday, totalsalary=@totalsalary WHERE id=@id";
+            string sql = "UPDATE tb_employee SET numberpayday=@numberpayday, totalsalary=@totalsalary WHERE id_nv=@id";
             MySqlConnection con = dc.getConnection();
             try
             {
                 cmd = new MySqlCommand(sql, con);
                 con.Open();
-                cmd.Parameters.Add("id", MySqlDbType.VarChar).Value = nv.id;
+                cmd.Parameters.Add("id", MySqlDbType.VarChar).Value = nv.id_nv;
                 cmd.Parameters.Add("numberpayday", MySqlDbType.VarChar).Value = nv.numberpayday;
                 cmd.Parameters.Add("totalsalary", MySqlDbType.VarChar).Value = nv.totalsalary;
                 cmd.ExecuteNonQuery();
