@@ -47,7 +47,7 @@ namespace WindowsFormsApp1
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            if (String.IsNullOrEmpty(txtName.Text) || String.IsNullOrEmpty(txtPhone.Text) || String.IsNullOrEmpty(txtAddress.Text))
+            if (ck.checkNullTextbox(txtName.Text.ToString()) && ck.checkNullTextbox(txtPhone.Text.ToString()) && ck.checkNullTextbox(txtAddress.Text.ToString()))
             {
                 if (ck.numberPhone(txtPhone.Text.ToString()))
                 {

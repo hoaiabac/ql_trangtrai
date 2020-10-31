@@ -110,7 +110,7 @@
             // lbLogout
             // 
             this.lbLogout.AutoSize = true;
-            this.lbLogout.Location = new System.Drawing.Point(790, 10);
+            this.lbLogout.Location = new System.Drawing.Point(997, 10);
             this.lbLogout.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lbLogout.Name = "lbLogout";
             this.lbLogout.Size = new System.Drawing.Size(92, 18);

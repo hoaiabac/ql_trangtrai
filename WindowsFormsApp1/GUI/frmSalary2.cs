@@ -73,7 +73,13 @@ namespace WindowsFormsApp1.GUI
             id1 = int.Parse(dgvSalary.Rows[numrow].Cells[0].Value.ToString());
             LbNameEmployee.Text = dgvSalary.Rows[numrow].Cells[1].Value.ToString();
             cbSalaryPerDay.Text = dgvSalary.Rows[numrow].Cells[2].Value.ToString();
-            nudNumberPayDay.Value = int.Parse(dgvSalary.Rows[numrow].Cells[3].Value.ToString());
+            if(dgvSalary.Rows[numrow].Cells[3].Value.ToString() !=""){
+                nudNumberPayDay.Value = int.Parse(dgvSalary.Rows[numrow].Cells[3].Value.ToString());
+            }
+            else
+            {
+                nudNumberPayDay.Value = 0;
+            } 
         }
 
         private void dgvSalary_CellContentClick(object sender, DataGridViewCellEventArgs e)

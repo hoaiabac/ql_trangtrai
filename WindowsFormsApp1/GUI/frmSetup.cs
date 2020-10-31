@@ -51,27 +51,36 @@ namespace WindowsFormsApp1.GUI
                 {
                     lbErrorPassOld.Text = "ok";
                     lbErrorPassOld.ForeColor = Color.Green;
-                    if (txtPassNew.Text == txtPassRetype.Text)
+                    if(txtPassOld.Text != txtPassNew.Text)
                     {
-
-                        DTO.User admin = new DTO.User();
-                        admin.id = ck.loadID();
-                        admin.password = txtPassNew.Text.ToString();
-                        admin.username = txtUsername.Text.ToString();
-                        bll.updateMK(admin);
-                        DialogResult result = MessageBox.Show("Đổi mật khẩu thành công", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
-                        if (result == DialogResult.OK)
+                        if (txtPassNew.Text == txtPassRetype.Text)
                         {
-                            this.Hide();
-                            new frmLogin().ShowDialog();
-                            this.Close();
+
+                            DTO.User admin = new DTO.User();
+                            admin.id = ck.loadID();
+                            admin.password = txtPassNew.Text.ToString();
+                            admin.username = txtUsername.Text.ToString();
+                            bll.updateMK(admin);
+                            DialogResult result = MessageBox.Show("Đổi mật khẩu thành công", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+                            if (result == DialogResult.OK)
+                            {
+                                this.Hide();
+                                new frmLogin().ShowDialog();
+                                this.Close();
+                            }
                         }
+                        else
+                        {
+                            lbErrorPassNew.Text = "";
+                            lbErrorPassRetype.Text = "Hai mật khẩu phải trùng nhau!";
+                        }
+
                     }
                     else
                     {
-                        lbErrorPassNew.Text = "";
-                        lbErrorPassRetype.Text = "Hai mật khẩu phải trùng nhau!";
+                        lbErrorPassNew.Text = "Bạn nhập mật khẩu cũ!";
                     }
+                    
                 }
                 else
                 {

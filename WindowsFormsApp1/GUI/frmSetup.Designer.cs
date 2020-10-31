@@ -144,6 +144,7 @@
             this.txtPassOld.Name = "txtPassOld";
             this.txtPassOld.Size = new System.Drawing.Size(223, 31);
             this.txtPassOld.TabIndex = 1;
+            this.txtPassOld.UseSystemPasswordChar = true;
             // 
             // label4
             // 
@@ -162,6 +163,7 @@
             this.txtPassRetype.Name = "txtPassRetype";
             this.txtPassRetype.Size = new System.Drawing.Size(223, 31);
             this.txtPassRetype.TabIndex = 1;
+            this.txtPassRetype.UseSystemPasswordChar = true;
             // 
             // label3
             // 
@@ -180,6 +182,7 @@
             this.txtPassNew.Name = "txtPassNew";
             this.txtPassNew.Size = new System.Drawing.Size(223, 31);
             this.txtPassNew.TabIndex = 1;
+            this.txtPassNew.UseSystemPasswordChar = true;
             // 
             // label2
             // 
