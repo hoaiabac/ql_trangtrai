@@ -97,12 +97,19 @@ namespace WindowsFormsApp1.GUI
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("Hủy tác vụ đang thao tác.", "THÔNG BÁO", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (result == DialogResult.Yes)
+            if (LbNameEmployee.Text != "")
             {
-                reset();
+                DialogResult result = MessageBox.Show("Hủy tác vụ đang thao tác.", "THÔNG BÁO", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (result == DialogResult.Yes)
+                {
+                    reset();
+                }
             }
         }
 
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }

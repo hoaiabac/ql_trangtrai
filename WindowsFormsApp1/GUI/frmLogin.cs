@@ -25,8 +25,9 @@ namespace WindowsFormsApp1
         private void frmLogin_Load(object sender, EventArgs e)
         {
             //this.Hide();
-            //new frmSetup().ShowDialog();
+            //new frmWarehouse().ShowDialog();
             //this.Close();
+            txtUsername.Focus();
             registration();
             reset();
         }

@@ -47,7 +47,7 @@ namespace WindowsFormsApp1
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            if (ck.checkNullTextbox(txtName.Text.ToString()) && ck.checkNullTextbox(txtAddress.Text.ToString()) && ck.checkNullTextbox(txtPhone.Text.ToString()))
+            if (String.IsNullOrEmpty(txtName.Text) || String.IsNullOrEmpty(txtPhone.Text) || String.IsNullOrEmpty(txtAddress.Text))
             {
                 if (ck.numberPhone(txtPhone.Text.ToString()))
                 {
@@ -84,9 +84,6 @@ namespace WindowsFormsApp1
             }
         }
 
-        private void dgvListEmployee_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-        }
 
         private void dgvListEmployee_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -142,11 +139,15 @@ namespace WindowsFormsApp1
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("Hủy tác vụ đang thao tác.", "THÔNG BÁO", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if(result == DialogResult.Yes)
+            if (ck.checkNullTextbox(txtName.Text.ToString()) || ck.checkNullTextbox(txtPhone.Text.ToString()) || ck.checkNullTextbox(txtAddress.Text.ToString()))
             {
-                reset();
-            }          
+                DialogResult result = MessageBox.Show("Hủy tác vụ đang thao tác.", "THÔNG BÁO", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (result == DialogResult.Yes)
+                {
+                    reset();
+                }
+            }
+                       
         }
 
         private void btnAddEmployee_Click(object sender, EventArgs e)
@@ -184,6 +185,9 @@ namespace WindowsFormsApp1
                 lbErrorAddress.Text = "Thông tin bắt buộc!";
             }
         }
+
+        
+
 
 
 

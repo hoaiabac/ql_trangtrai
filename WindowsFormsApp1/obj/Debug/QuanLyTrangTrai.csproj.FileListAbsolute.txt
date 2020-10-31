@@ -42,3 +42,5 @@ C:\Users\bacbo\OneDrive\Máy tính\TTCN\ql_trangtrai\WindowsFormsApp1\obj\Debug\
 C:\Users\bacbo\OneDrive\Máy tính\TTCN\ql_trangtrai\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.GUI.frmSalary2.resources
 C:\Users\bacbo\OneDrive\Máy tính\TTCN\ql_trangtrai\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.GUI.frmSetup.resources
 C:\Users\bacbo\OneDrive\Máy tính\TTCN\ql_trangtrai\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.GUI.frmRegisTration.resources
+C:\Users\bacbo\OneDrive\Máy tính\TTCN\ql_trangtrai\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.GUI.frmManagementExport.resources
+C:\Users\bacbo\OneDrive\Máy tính\TTCN\ql_trangtrai\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.GUI.frmManagementInport.resources

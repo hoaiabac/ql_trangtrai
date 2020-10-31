@@ -77,7 +77,7 @@
             this.cbNameCommodity.Location = new System.Drawing.Point(214, 44);
             this.cbNameCommodity.Name = "cbNameCommodity";
             this.cbNameCommodity.Size = new System.Drawing.Size(227, 31);
-            this.cbNameCommodity.TabIndex = 1;
+            this.cbNameCommodity.TabIndex = 2;
             // 
             // txtUnitPrice
             // 
@@ -86,7 +86,7 @@
             this.txtUnitPrice.Margin = new System.Windows.Forms.Padding(4);
             this.txtUnitPrice.Name = "txtUnitPrice";
             this.txtUnitPrice.Size = new System.Drawing.Size(227, 31);
-            this.txtUnitPrice.TabIndex = 3;
+            this.txtUnitPrice.TabIndex = 4;
             this.txtUnitPrice.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtUnitPrice_KeyPress);
             // 
             // label7
@@ -118,7 +118,7 @@
             this.txtNumber.Margin = new System.Windows.Forms.Padding(4);
             this.txtNumber.Name = "txtNumber";
             this.txtNumber.Size = new System.Drawing.Size(227, 31);
-            this.txtNumber.TabIndex = 2;
+            this.txtNumber.TabIndex = 3;
             this.txtNumber.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNumber_KeyPress);
             // 
             // label4
@@ -203,7 +203,7 @@
             this.groupBox1.Location = new System.Drawing.Point(25, 48);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(694, 206);
-            this.groupBox1.TabIndex = 29;
+            this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin nhập kho";
             // 

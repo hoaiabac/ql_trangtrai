@@ -41,6 +41,11 @@
             this.lbLogout = new System.Windows.Forms.LinkLabel();
             this.btnHome = new System.Windows.Forms.Button();
             this.dgvSalary = new System.Windows.Forms.DataGridView();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.salaryperday = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.numberpayday = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.totalsalary = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -51,11 +56,6 @@
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.salaryperday = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.numberpayday = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.totalsalary = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSalary)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudNumberPayDay)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -153,6 +153,56 @@
             this.dgvSalary.TabIndex = 9;
             this.dgvSalary.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSalary_CellClick);
             this.dgvSalary.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSalary_CellContentClick);
+            // 
+            // id
+            // 
+            this.id.DataPropertyName = "id_nv";
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.id.DefaultCellStyle = dataGridViewCellStyle1;
+            this.id.FillWeight = 50.76142F;
+            this.id.HeaderText = "ID";
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            // 
+            // name
+            // 
+            this.name.DataPropertyName = "name";
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.name.DefaultCellStyle = dataGridViewCellStyle2;
+            this.name.FillWeight = 112.3096F;
+            this.name.HeaderText = "Họ Tên";
+            this.name.Name = "name";
+            this.name.ReadOnly = true;
+            // 
+            // salaryperday
+            // 
+            this.salaryperday.DataPropertyName = "salaryperday";
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.salaryperday.DefaultCellStyle = dataGridViewCellStyle3;
+            this.salaryperday.FillWeight = 112.3096F;
+            this.salaryperday.HeaderText = "Ngày Lương";
+            this.salaryperday.Name = "salaryperday";
+            this.salaryperday.ReadOnly = true;
+            // 
+            // numberpayday
+            // 
+            this.numberpayday.DataPropertyName = "numberpayday";
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numberpayday.DefaultCellStyle = dataGridViewCellStyle4;
+            this.numberpayday.FillWeight = 112.3096F;
+            this.numberpayday.HeaderText = "Số ngày công";
+            this.numberpayday.Name = "numberpayday";
+            this.numberpayday.ReadOnly = true;
+            // 
+            // totalsalary
+            // 
+            this.totalsalary.DataPropertyName = "totalsalary";
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.totalsalary.DefaultCellStyle = dataGridViewCellStyle5;
+            this.totalsalary.FillWeight = 112.3096F;
+            this.totalsalary.HeaderText = "Tổng lương";
+            this.totalsalary.Name = "totalsalary";
+            this.totalsalary.ReadOnly = true;
             // 
             // label2
             // 
@@ -260,6 +310,7 @@
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin Lương:";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // groupBox2
             // 
@@ -273,56 +324,6 @@
             this.groupBox2.TabIndex = 8;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Danh sách lương";
-            // 
-            // id
-            // 
-            this.id.DataPropertyName = "id_nv";
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.id.DefaultCellStyle = dataGridViewCellStyle1;
-            this.id.FillWeight = 50.76142F;
-            this.id.HeaderText = "ID";
-            this.id.Name = "id";
-            this.id.ReadOnly = true;
-            // 
-            // name
-            // 
-            this.name.DataPropertyName = "name";
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.name.DefaultCellStyle = dataGridViewCellStyle2;
-            this.name.FillWeight = 112.3096F;
-            this.name.HeaderText = "Họ Tên";
-            this.name.Name = "name";
-            this.name.ReadOnly = true;
-            // 
-            // salaryperday
-            // 
-            this.salaryperday.DataPropertyName = "salaryperday";
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.salaryperday.DefaultCellStyle = dataGridViewCellStyle3;
-            this.salaryperday.FillWeight = 112.3096F;
-            this.salaryperday.HeaderText = "Ngày Lương";
-            this.salaryperday.Name = "salaryperday";
-            this.salaryperday.ReadOnly = true;
-            // 
-            // numberpayday
-            // 
-            this.numberpayday.DataPropertyName = "numberpayday";
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numberpayday.DefaultCellStyle = dataGridViewCellStyle4;
-            this.numberpayday.FillWeight = 112.3096F;
-            this.numberpayday.HeaderText = "Số ngày công";
-            this.numberpayday.Name = "numberpayday";
-            this.numberpayday.ReadOnly = true;
-            // 
-            // totalsalary
-            // 
-            this.totalsalary.DataPropertyName = "totalsalary";
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.totalsalary.DefaultCellStyle = dataGridViewCellStyle5;
-            this.totalsalary.FillWeight = 112.3096F;
-            this.totalsalary.HeaderText = "Tổng lương";
-            this.totalsalary.Name = "totalsalary";
-            this.totalsalary.ReadOnly = true;
             // 
             // frmSalary2
             // 

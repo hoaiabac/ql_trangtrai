@@ -10,12 +10,75 @@ namespace WindowsFormsApp1.DAL
 {
     class DALKho
     {
+        DAL.DALKho dalk;
+        
         DataConnection dc;
         MySqlDataAdapter da;
         MySqlCommand cmd;
         public DALKho()
         {
             dc = new DataConnection();
+        }
+        public DataTable getAllKho()
+        {
+            string sql = "SELECT * FROM tb_warehouse";
+            MySqlConnection con = dc.getConnection();
+            da = new MySqlDataAdapter(sql, con);
+            con.Open();
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            con.Close();
+            return dt;
+        }
+        public DataTable getAllKho1()
+        {
+            string sql = "SELECT namecommodity, number FROM tb_warehouse";
+            MySqlConnection con = dc.getConnection();
+            da = new MySqlDataAdapter(sql, con);
+            con.Open();
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            con.Close();
+            return dt;
+        }
+        public bool updateWarehouse(DTO.Kho kho)
+        {
+            string sql = "UPDATE tb_warehouse SET number=@number WHERE id_hh=@id";
+            MySqlConnection con = dc.getConnection();
+            try
+            {
+                cmd = new MySqlCommand(sql, con);
+                con.Open();
+                cmd.Parameters.Add("id", MySqlDbType.VarChar).Value = kho.id_hh;
+                cmd.Parameters.Add("number", MySqlDbType.VarChar).Value = kho.number;
+                cmd.ExecuteNonQuery();
+                con.Close();
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+            return true;
+        }
+        public bool insertWarehouse(DTO.Kho kho)
+        {
+            string sql = "INSERT INTO tb_warehouse(id_hh, namecommodity, number) VALUES (@id_hh, @namecommodity, @number)";
+            MySqlConnection con = dc.getConnection();
+            try
+            {
+                cmd = new MySqlCommand(sql, con);
+                con.Open();
+                cmd.Parameters.Add("id_hh", MySqlDbType.VarChar).Value = kho.id_hh;
+                cmd.Parameters.Add("namecommodity", MySqlDbType.VarChar).Value = kho.namecommodity;
+                cmd.Parameters.Add("number", MySqlDbType.VarChar).Value = kho.number;
+                cmd.ExecuteNonQuery();
+                con.Close();
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+            return true;
         }
         public DataTable getAllNhapKho()
         {
@@ -121,9 +184,9 @@ namespace WindowsFormsApp1.DAL
             return true;
 
         }
-        public DataTable loadComboBox(String str1,String str2,String str3)
+        public DataTable loadComboBox(String str1, String str2, String str3)
         {
-            string sql = "SELECT "+str3+","+str1+" FROM "+str2;
+            string sql = "SELECT " + str3 + "," + str1 + " FROM " + str2;
             MySqlConnection con = dc.getConnection();
             da = new MySqlDataAdapter(sql, con);
             con.Open();

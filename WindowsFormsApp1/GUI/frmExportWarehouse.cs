@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WindowsFormsApp1.GUI;
 
 namespace WindowsFormsApp1
 {
@@ -23,9 +24,11 @@ namespace WindowsFormsApp1
 
         private void frmOutWarehouse_Load(object sender, EventArgs e)
         {
+            cbNameCommodity.Focus();
             lbName.Text = ck.loadName();
             cbNameCommodity.DataSource = bll.loadComboBox();
-            cbNameCommodity.ValueMember = "namecommodity";
+            cbNameCommodity.ValueMember = "id_hh";
+            cbNameCommodity.DisplayMember = "namecommodity";
             reset();
         }
 
@@ -40,28 +43,39 @@ namespace WindowsFormsApp1
         {
             if (ck.checkNullTextbox(txtNumber.Text.ToString()))
             {
-                DialogResult result1 = MessageBox.Show("Xác nhân xuất kho", "THÔNG BÁO", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
-                if (result1 == DialogResult.Yes)
+                if (int.Parse(txtNumber.Text) <= bll.getNumber(int.Parse(cbNameCommodity.SelectedValue.ToString())))
                 {
-                    DTO.XuatKho xk = new DTO.XuatKho();
-                    xk.namecommodity = cbNameCommodity.Text;
-                    xk.number = int.Parse(txtNumber.Text);
-                    DateTime tn = DateTime.Now;
-                    xk.time = tn.ToString("yyyy-MM-dd HH:mm:ss");
-                    bll.insertXK(xk);
-                    reset();
+                    DialogResult result1 = MessageBox.Show("Xác nhân xuất kho", "THÔNG BÁO", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
+                    if (result1 == DialogResult.Yes)
+                    {
+                        DTO.XuatKho xk = new DTO.XuatKho();
+                        xk.namecommodity = cbNameCommodity.Text;
+                        xk.number = int.Parse(txtNumber.Text);
+                        DateTime tn = DateTime.Now;
+                        xk.time = tn.ToString("yyyy-MM-dd HH:mm:ss");
+                        bll.insertXK(xk);
+                        DTO.Kho kho = new DTO.Kho();
+                        //MessageBox.Show("" + (bll.getNumber(int.Parse(cbNameCommodity.SelectedValue.ToString()))-int.Parse(txtNumber.Text)));
+                        kho.id_hh = int.Parse(cbNameCommodity.SelectedValue.ToString());
+                        kho.number = (bll.getNumber(int.Parse(cbNameCommodity.SelectedValue.ToString())) - int.Parse(txtNumber.Text));
+                        bll.updateWarehouse(kho);
+                        reset();
+                    }
+                    else
+                    {
+                        reset();
+                    }
                 }
                 else
                 {
-                    reset();
+                    MessageBox.Show("Số lượng hàng hóa trong kho không đủ");
                 }
             }
             else
             {
                 lbErrorNumber.Text = "Thông tin bắt buộc!";
-            }
+            }   
         }
-
         private void reset()
         {
             cbNameCommodity.SelectedIndex = 0;
@@ -77,14 +91,14 @@ namespace WindowsFormsApp1
                 if (result == DialogResult.Yes)
                 {
                     this.Hide();
-                    new frmWarehouse().ShowDialog();
+                    new frmManagementExport().ShowDialog();
                     this.Close();
                 }
             }
             else
             {
                 this.Hide();
-                new frmWarehouse().ShowDialog();
+                new frmManagementExport().ShowDialog();
                 this.Close();
             }
              

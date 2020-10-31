@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WindowsFormsApp1.GUI;
 
 namespace WindowsFormsApp1
 {
@@ -22,8 +23,9 @@ namespace WindowsFormsApp1
         }
         private void frmImportWarehouse_Load(object sender, EventArgs e)
         {
+            cbNameCommodity.Focus();
             lbName.Text = ck.loadName();
-            cbNameCommodity.DataSource = bll.loadComboBox();
+            cbNameCommodity.DataSource = bll.loadComboBox2();
             cbNameCommodity.ValueMember = "id_hh";
             cbNameCommodity.DisplayMember = "namecommodity";
             reset();
@@ -51,7 +53,23 @@ namespace WindowsFormsApp1
                     DateTime tn = DateTime.Now;
                     nk.time = tn.ToString("yyyy-MM-dd HH:mm:ss");
                     bll.insertNK(nk);
-                    reset();   
+                    if(bll.getNumber(nk.id_hh) == 0)
+                    {
+                        DTO.Kho kho = new DTO.Kho();
+                        kho.id_hh = int.Parse(cbNameCommodity.SelectedValue.ToString());
+                        kho.namecommodity = cbNameCommodity.Text;
+                        kho.number = int.Parse(txtNumber.Text);
+                        bll.insertWarehouse(kho);
+                        reset();
+                    }
+                    else
+                    {
+                        DTO.Kho kho = new DTO.Kho();
+                        kho.id_hh = int.Parse(cbNameCommodity.SelectedValue.ToString());
+                        kho.number = (bll.getNumber(int.Parse(cbNameCommodity.SelectedValue.ToString())) + int.Parse(txtNumber.Text));
+                        bll.updateWarehouse(kho);
+                        reset();
+                    }    
                 }
                 else
                 {
@@ -75,14 +93,14 @@ namespace WindowsFormsApp1
                 if (result == DialogResult.Yes)
                 {
                     this.Hide();
-                    new frmWarehouse().ShowDialog();
+                    new frmManagementInport().ShowDialog();
                     this.Close();
                 }
             }
             else
             {
                 this.Hide();
-                new frmWarehouse().ShowDialog();
+                new frmManagementInport().ShowDialog();
                 this.Close();
             }
              

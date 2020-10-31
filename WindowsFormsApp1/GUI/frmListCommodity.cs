@@ -159,7 +159,13 @@ namespace WindowsFormsApp1
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            reset();
+            if(ck.checkNullTextbox(txtNameCommodity.Text.ToString()) || ck.checkNullTextbox(txtDistributor.Text.ToString())){
+                DialogResult result = MessageBox.Show("Hủy tác vụ đang thao tác.", "THÔNG BÁO", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (result == DialogResult.Yes)
+                {
+                    reset();
+                }
+            } 
         }
     }
 }
